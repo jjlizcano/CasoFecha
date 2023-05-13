@@ -12,6 +12,13 @@ public class Fecha
     //
     // Métodos
     //
+    public Fecha(int d, int m, int a)
+    {
+        this.dia = d;
+        this.mes = m;
+        this.anio = a;
+    }
+    
     public int getDia() {
         return dia;
     }
@@ -22,14 +29,14 @@ public class Fecha
         return anio;
     }
     
-    public void setDia(int pdia) {
-        this.dia = pdia;
+    public void setDia(int d) {
+        this.dia = d;
     }
-    public void setMes(int pmes) {
-        this.mes = pmes;
+    public void setMes(int m) {
+        this.mes = m;
     }
-    public void setAnio(int panio) {
-        this.anio = panio;
+    public void setAnio(int a) {
+        this.anio = a;
     }
 
     public String toString()
