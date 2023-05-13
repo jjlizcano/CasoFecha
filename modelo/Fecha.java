@@ -19,23 +19,29 @@ public class Fecha
         this.anio = a;
     }
     
-    public int getDia() {
+    public int getDia() 
+    {
         return dia;
     }
-    public int getMes() {
+    public int getMes() 
+    {
         return mes;
     }
-    public int getAnio() {
+    public int getAnio() 
+    {
         return anio;
     }
     
-    public void setDia(int d) {
+    public void setDia(int d) 
+    {
         this.dia = d;
     }
-    public void setMes(int m) {
+    public void setMes(int m) 
+    {
         this.mes = m;
     }
-    public void setAnio(int a) {
+    public void setAnio(int a) 
+    {
         this.anio = a;
     }
 
