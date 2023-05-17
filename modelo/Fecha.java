@@ -18,6 +18,27 @@ public class Fecha
         this.mes = m;
         this.anio = a;
     }
+
+    public Fecha(String s)
+    {
+        // Buscamos la primera ocurrencia de "/"
+        int pos1 = s.indexOf("/");
+
+        // Buscamos la última ocurrencia de "/"
+        int pos2 = s.lastIndexOf("/");
+
+        // Extraemos el día
+        String sDia = s.substring(0, pos1);
+        dia = Integer.parseInt(sDia);
+
+        // Extraemos el mes
+        String sMes = s.substring(pos1 + 1, pos2);
+        mes = Integer.parseInt(sMes);
+
+        // Extraemos el año
+        String sAnio = s.substring(pos2 + 1);
+        anio = Integer.parseInt(sAnio);
+    }
     
     public int getDia() 
     {
