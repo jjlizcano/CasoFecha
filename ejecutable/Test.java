@@ -28,5 +28,14 @@ public class Test
         {
             System.out.println("Fechas diferentes");
         }
+
+        //
+        // Ejemplo encapsulamiento
+        //
+
+        Fecha fecha = new Fecha("23/12/1980");
+        fecha.addDias(180);
+
+        System.out.println(fecha);
     }
 }

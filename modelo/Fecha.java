@@ -39,7 +39,6 @@ public class Fecha
         String sAnio = s.substring(pos2 + 1);
         anio = Integer.parseInt(sAnio);
     }
-    
     public int getDia() 
     {
         return dia;
@@ -65,15 +64,64 @@ public class Fecha
     {
         this.anio = a;
     }
-
+    
     public String toString()
     {
         return dia + "/" + mes + "/" + anio;
     }
-
+    
     public boolean equals(Object o)
     {
         Fecha otra = (Fecha)o;
         return (dia==otra.dia) && (mes==otra.mes) && (anio==otra.anio);
     }
+    
+    //
+    // Ejemplo encapsulamiento
+    //
+    
+    // Retornar fecha expresada en días
+    private int fechaToDias()
+    {
+        // Considerando que los meses son de 30 días
+        return anio * 360 + mes * 30 + dia;
+    }
+    
+    // asigna la fecha expresada en días a los atributos
+    private void diasToFecha(int pD)
+    {
+        // Dividimos por 360 y obtenemos el año
+        anio = (int)(pD/360);
+    
+        //Del residuo de la división anterior
+        //obtenemos el mes y el dia
+        int residuo = pD%360;
+        
+        mes = (int)(residuo/30);
+        
+        dia = residuo%30;
+        
+        //Ajuste por si el día quedó en cero
+        if(dia==0)
+        {
+            dia = 30;
+            mes--;
+        }
+        
+        //Ajuste por si el mes quedó en cero
+        if(mes == 0)
+        {
+            mes = 12;
+            anio--;
+        }
+    }
+    
+    public void addDias(int pD)
+    {
+        //convertimos la fecha a dias y le sumamos d
+        int sum = fechaToDias() + pD;
+        
+        //la fecha resultante (sum) separarla en dia, mes y anio
+        diasToFecha(sum);
+    }   
 }
